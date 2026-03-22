@@ -23,6 +23,8 @@ vector<int> Factors(int n)
     return facts;
 }
 
+// Time complexity o(root(n));
+
 int main()
 {
 }
