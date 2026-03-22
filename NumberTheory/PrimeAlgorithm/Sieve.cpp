@@ -38,7 +38,7 @@ vector<bool> Sieve(int n)
 // Only mark multipples of primes upto root(n) beacuse
 // All remaining unmarked numbers are primes
 
-void OptimizedSieve(int n)
+vector<bool> OptimizedSieve(int n)
 {
     vector<bool> a(n + 1, true);
     a[0] = a[1] = false;
@@ -52,7 +52,54 @@ void OptimizedSieve(int n)
             }
         }
     }
+    return a;
 }
+// It reduces number of operations by about 50%
+// Other optimizations are ->
+
+// 2. Odd check Sieve (Since we knew that all multiple of 2s are even and composite we don'r need to check them)
+// INstead check only for odd primes
+// Here the algorithm
+
+vector<bool> SieveFullOptimized(int n)
+{
+    vector<bool> a(n + 1, true);
+    a[0] = a[1] = false;
+
+    // Handle even numbers
+    for (int i = 4; i <= n; i += 2)
+    {
+        a[i] = false;
+    }
+
+    for (int i = 3; i * i <= n; i++)
+    {
+        if (a[i])
+        {
+            for (int j = i * i; j <= n; j += (2 * i))
+            {
+                a[j] = false;
+            }
+        }
+    }
+    return a;
+}
+
+// Sum of divisors using Sieve
+vector<int> sum_of_divisors(int n)
+{
+    vector<int> a(n + 1, 0);
+
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = i; j <= n; j += i)
+        {
+            a[j] += i;
+        }
+    }
+    return a;
+}
+
 int main()
 {
 }
