@@ -24,6 +24,10 @@ void Precompute(vector<long long> &Sieve)
     }
 }
 
+// what we are trying to do here is => find the smallest prime factor of the n
+// and since we need their exponents in formula we calculate exponents of every possible prime factors
+// and then we keep updating nand calculating ans
+
 void SumofFactors()
 {
     int MAX = 10e6;
