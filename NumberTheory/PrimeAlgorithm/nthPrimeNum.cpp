@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+// sIEVE APPLICATION
 // In this lecture we are going to solve the problem finding nth prime number
 // And here we are using optimized sieve algorithm
 
@@ -30,6 +31,7 @@ void solve(int n)
         }
     }
     int cnt = 1; // we already counted 2
+    // we don't need to ccheck those even elelments they are already even theres no way it could be prime
     for (int i = 3; i <= n; i += 2)
     {
         if (a[i])
