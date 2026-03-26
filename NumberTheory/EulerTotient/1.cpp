@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+// Euler totient function counts how many numbers less than or equal to n
+//  are coprime with n
+
 int EulerTotient(int n)
 {
     int result = n;
