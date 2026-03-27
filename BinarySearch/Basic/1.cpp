@@ -25,7 +25,10 @@ void LinearSearch()
     // Here our avg Time cmplexity can be said as o(n);
     // we are trevaresing every single ellemnt from the array
     // the problem is that we are not utilizing the sorted arrays
+    // It becames very slow in case n > 10^5 tle may occurs
 }
+
+// While in sorted arrays
 void BinarySearch()
 {
 }
